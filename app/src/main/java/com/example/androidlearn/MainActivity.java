@@ -26,7 +26,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+
+
 public class MainActivity extends AppCompatActivity {
+    //新加的两个TYPE用于判断操作类型
     final static int UPTYPE = 1;
     final static int DOWNTYPE = 0;
     private List<Category> categories = new ArrayList<>();
@@ -62,6 +65,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    /**
+* @Description: 用于请求网络及发出更新ui请求
+* @Param: [Type]
+* @return: void
+* @Author: JiangLing
+* @Date: 2019/12/13
+*/
     private void request(final int Type) {
         final StringBuilder stringBuilder = new StringBuilder();
         new Thread(new Runnable() {
@@ -102,8 +113,14 @@ public class MainActivity extends AppCompatActivity {
         }).start();
 
     }
-
-    private void translate(String json, int Type) {
+/**
+* @Description: 解析Jaon且根据TYPE类型来执行不同的操作--更新recyclerview中的数据
+* @Param: [json, Type]
+* @return: void
+* @Author: JiangLing
+* @Date: 2019/12/13
+*/
+private void translate(String json, int Type) {
         try {
             JSONObject jsonObject = new JSONObject(json);
             final JSONArray jsonArray = jsonObject.getJSONArray("results");

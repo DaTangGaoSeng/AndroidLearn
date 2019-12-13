@@ -2,7 +2,7 @@ package com.example.androidlearn;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-//下拉刷新类
+//下拉刷新监听类
 abstract public class OnLastitemListener extends RecyclerView.OnScrollListener {
     private boolean upslide = true;//是否是在向上滑动
 

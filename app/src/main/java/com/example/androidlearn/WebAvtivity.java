@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
+//显示webview
 public class WebAvtivity extends AppCompatActivity {
 
     @Override
